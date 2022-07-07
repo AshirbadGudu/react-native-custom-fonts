@@ -7,111 +7,33 @@
  *
  * @format
  */
-
-import React, {type PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section: React.FC<
-  PropsWithChildren<{
-    title: string;
-  }>
-> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import React from 'react';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.Black}>Black</Text>
+      <Text style={styles.ExtraBold}>ExtraBold</Text>
+      <Text style={styles.Bold}>Bold</Text>
+      <Text style={styles.SemiBold}>SemiBold</Text>
+      <Text style={styles.Medium}>Medium</Text>
+      <Text style={styles.Regular}>Regular</Text>
+      <Text style={styles.Light}>Light</Text>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
 export default App;
+
+const styles = StyleSheet.create({
+  container: {padding: 10},
+  Black: {fontSize: 30, fontFamily: 'Nunito-Black'},
+  Bold: {fontSize: 30, fontFamily: 'Nunito-Bold'},
+  ExtraBold: {fontSize: 30, fontFamily: 'Nunito-ExtraBold'},
+  Light: {fontSize: 30, fontFamily: 'Nunito-Light'},
+  Medium: {fontSize: 30, fontFamily: 'Nunito-Medium'},
+  Regular: {fontSize: 30, fontFamily: 'Nunito-Regular'},
+  SemiBold: {fontSize: 30, fontFamily: 'Nunito-SemiBold'},
+  Italic: {fontSize: 30, fontFamily: 'Nunito-Italic'},
+});
